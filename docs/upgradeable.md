@@ -2,7 +2,7 @@
 
 If you are deploying upgradeable contracts, 
 such as using [OpenZeppelin Upgrade Plugins](https://docs.openzeppelin.com/upgrades-plugins/1.x/), 
-you will need to use the upgradeable variant of ERC721A. 
+you will need to use the upgradeable variant of ERC721L. 
 
 For more information, please refer to 
 [OpenZeppelin's documentation](https://docs.openzeppelin.com/contracts/4.x/upgradeable).
@@ -12,12 +12,12 @@ Since v4, the upgradeable variant uses the Diamond storage pattern as defined in
 ## Installation
 
 ```
-npm install --save-dev erc721a-upgradeable
+npm install --save-dev erc721l-upgradeable
 ```
 
 ## Usage
 
-The package shares the same directory layout as the main ERC721A package, but every file and contract has the suffix `Upgradeable`.
+The package shares the same directory layout as the main ERC721L package, but every file and contract has the suffix `Upgradeable`.
 
 Constructors are replaced by internal initializer functions following the naming convention `__{ContractName}__init`. 
 
@@ -26,7 +26,7 @@ These functions are internal, and you must define your own public initializer fu
 ```solidity
 pragma solidity ^0.8.4;
 
-import 'erc721a-upgradeable/contracts/ERC721AUpgradeable.sol';
+import 'erc721l-upgradeable/contracts/ERC721AUpgradeable.sol';
 import '@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol';
 
 contract Something is ERC721AUpgradeable, OwnableUpgradeable {

@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
-// ERC721A Contracts v4.2.3
+// ERC721L Contracts v4.2.3
 // Creators: Chiru Labs
 
 pragma solidity ^0.8.4;
 
-import '../ERC721A.sol';
+import '../ERC721L.sol';
 
 interface IERC721AMock {
     function safeMint(address to, uint256 quantity) external;

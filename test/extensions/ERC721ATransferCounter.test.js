@@ -100,7 +100,7 @@ const createTestSuite = ({ contract, constructorArgs }) =>
   };
 
 describe(
-  'ERC721A override _extraData()',
+  'ERC721L override _extraData()',
   createTestSuite({
     contract: 'ERC721ATransferCounterMock',
     constructorArgs: ['Azuki', 'AZUKI'],

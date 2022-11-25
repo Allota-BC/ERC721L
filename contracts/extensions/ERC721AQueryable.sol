@@ -1,18 +1,18 @@
 // SPDX-License-Identifier: MIT
-// ERC721A Contracts v4.2.3
+// ERC721L Contracts v4.2.3
 // Creator: Chiru Labs
 
 pragma solidity ^0.8.4;
 
 import './IERC721AQueryable.sol';
-import '../ERC721A.sol';
+import '../ERC721L.sol';
 
 /**
  * @title ERC721AQueryable.
  *
- * @dev ERC721A subclass with convenience query functions.
+ * @dev ERC721L subclass with convenience query functions.
  */
-abstract contract ERC721AQueryable is ERC721A, IERC721AQueryable {
+abstract contract ERC721AQueryable is ERC721L, IERC721AQueryable {
     /**
      * @dev Returns the `TokenOwnership` struct at `tokenId` without reverting.
      *

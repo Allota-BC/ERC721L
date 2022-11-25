@@ -1,6 +1,6 @@
-# ERC721A
+# ERC721L
 
-[`erc721a/contracts/ERC721A.sol`](https://github.com/chiru-labs/ERC721A/blob/main/contracts/ERC721A.sol)
+[`erc721l/contracts/ERC721L.sol`](https://github.com/chiru-labs/ERC721L/blob/main/contracts/ERC721L.sol)
 
 Implementation of [ERC721](https://eips.ethereum.org/EIPS/eip-721) Non-Fungible Token Standard, including the Metadata extension. Built to optimize for lower gas during batch mints.
 

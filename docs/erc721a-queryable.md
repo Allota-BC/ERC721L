@@ -1,12 +1,12 @@
 # ERC721AQueryable
 
-[`erc721a/contracts/extensions/ERC721AQueryable.sol`](https://github.com/chiru-labs/ERC721A/blob/main/contracts/extensions/ERC721AQueryable.sol)
+[`erc721l/contracts/extensions/ERC721AQueryable.sol`](https://github.com/chiru-labs/ERC721L/blob/main/contracts/extensions/ERC721AQueryable.sol)
 
-ERC721A subclass with convenience query functions.
+ERC721L subclass with convenience query functions.
 
 Inherits:
 
-- [ERC721A](erc721a.md)
+- [ERC721L](erc721l.md)
 - [IERC721AQueryable](interfaces.md#ierc721aqueryable) 
 
 ## Functions
@@ -17,7 +17,7 @@ Inherits:
 function explicitOwnershipOf(uint256 tokenId) public view returns (TokenOwnership memory)
 ```
 
-Returns the [`TokenOwnership`](erc721a.md#tokenownership) struct at `tokenId` without reverting.
+Returns the [`TokenOwnership`](erc721l.md#tokenownership) struct at `tokenId` without reverting.
 
 This is useful for on-chain and off-chain querying of ownership data for tokenomics.
 

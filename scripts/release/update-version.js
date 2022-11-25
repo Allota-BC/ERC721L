@@ -22,7 +22,7 @@ packageLockJson.packages[""].version = version;
 fs.writeFileSync('package-lock.json', JSON.stringify(packageLockJson, null, 2));
 
 const spdxString = '// SPDX-License-Identifier: MIT';
-const versionPrefix = '// ERC721A Contracts v';
+const versionPrefix = '// ERC721L Contracts v';
 
 // loop through all files with contracts/**/*.sol pattern
 glob('contracts/**/*.sol', null, function (err, files) {

@@ -1,7 +1,7 @@
 {
-  "name": "erc721a",
+  "name": "erc721l",
   "version": "4.2.3",
-  "description": "ERC721A contract for Solidity",
+  "description": "ERC721L contract for Solidity",
   "files": [
     "/contracts/**/*.sol",
     "/build/contracts/*.json",
@@ -35,12 +35,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chiru-labs/ERC721A.git"
+    "url": "git+https://github.com/chiru-labs/ERC721L.git"
   },
   "author": "chiru-labs",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chiru-labs/ERC721A/issues"
+    "url": "https://github.com/chiru-labs/ERC721L/issues"
   },
-  "homepage": "https://github.com/chiru-labs/ERC721A#readme"
+  "homepage": "https://github.com/chiru-labs/ERC721L#readme"
 }

@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: MIT
-// ERC721A Contracts v4.2.3
+// ERC721L Contracts v4.2.3
 // Creators: Chiru Labs
 
 pragma solidity ^0.8.4;
 
 import '../extensions/ERC721ABurnable.sol';
 
-contract ERC721ABurnableMock is ERC721A, ERC721ABurnable {
-    constructor(string memory name_, string memory symbol_) ERC721A(name_, symbol_) {}
+contract ERC721ABurnableMock is ERC721L, ERC721ABurnable {
+    constructor(string memory name_, string memory symbol_) ERC721L(name_, symbol_) {}
 
     function exists(uint256 tokenId) public view returns (bool) {
         return _exists(tokenId);

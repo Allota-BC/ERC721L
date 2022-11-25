@@ -1,6 +1,6 @@
 # Design
 
-ERC721A enables a near constant gas cost for batch minting via a lazy-initialization mechanism.
+ERC721L enables a near constant gas cost for batch minting via a lazy-initialization mechanism.
 
 Token IDs are minted in sequential order (e.g. 0, 1, 2, 3, ...).
 
@@ -15,7 +15,7 @@ Regardless of the quantity minted, the `_mint` function only performs 3 `SSTORE`
 
 ## Lower Fees
 
-ERC721A defers the initialization of token ownership slots from minting to transferring.
+ERC721L defers the initialization of token ownership slots from minting to transferring.
 
 This allows users to batch mint with low, near-constant transaction fees, and pick a good time to transfer when the network's BASEFEE is lower.
 
@@ -25,13 +25,13 @@ Although this has a higher total gas cost (minting + transfers), **it gives sign
 
 Gas savings during high BASEFEE periods matter **more**.
 
-As such, ERC721A prioritizes gas savings for the minting phase.
+As such, ERC721L prioritizes gas savings for the minting phase.
 
 ### Benchmark
 
-To illustrate, we compare OpenZeppelin's ERC721 with ERC721A.
+To illustrate, we compare OpenZeppelin's ERC721 with ERC721L.
 
-|                            | ERC721       | ERC721A        |
+|                            | ERC721       | ERC721L        |
 | -------------------------- | ------------ | -------------- |
 | Batch Mint 5 Tokens        | 155949 gas   | 63748 gas      |
 | Transfer 5 Tokens          | 226655 gas   | 334450 gas     |
@@ -49,7 +49,7 @@ When consecutive blocks hit the block gas limit, [the BASEFEE increases exponent
 
 The main overhead of transferring a token **only occurs during its very first transfer** for an uninitialized slot. 
 
-|                            | ERC721       | ERC721A        |
+|                            | ERC721       | ERC721L        |
 | -------------------------- | ------------ | -------------- |
 | First transfer             | 45331 gas    | 92822 gas      |
 | Subsequent transfers       | 45331 gas    | 44499 gas      |
@@ -58,14 +58,14 @@ Here, we bulk mint 10 tokens, and compare the transfer costs of the 5th token in
 
 To keep the cost of the `SSTORE` writing to the balance mapping constant, we ensure that the destination addresses have non-zero balances during all transfers.
 
-The first transfer with ERC721A will incur the storage overheads:
+The first transfer with ERC721L will incur the storage overheads:
 
 - 2 extra `SSTORE`s (initialize current slot and next slot, both of which are empty).
 - 5 extra `SLOAD`s (read previous slots and next slot).
 
 ## Balance Mapping
 
-ERC721A maintains an internal mapping of address balances. This is an important and deliberate design decision:
+ERC721L maintains an internal mapping of address balances. This is an important and deliberate design decision:
 
 - The `balanceOf` function is required by the ERC721 standard. 
   
@@ -77,7 +77,7 @@ ERC721A maintains an internal mapping of address balances. This is an important 
 
   In the case of service disruption, the data can get out-of-sync and hard to reconstruct.
 
-- In the context of saving gas, we are able to allow whitelist minting achieve the same amount of `SSTORE`s when compared to implementations without the mapping. See `ERC721A._getAux` and `ERC721A._setAux`. 
+- In the context of saving gas, we are able to allow whitelist minting achieve the same amount of `SSTORE`s when compared to implementations without the mapping. See `ERC721L._getAux` and `ERC721L._setAux`. 
 
   The address balance mapping is also used to store the mint and burn counts per address with negligible overhead, which can be very useful for tokenomics.
 

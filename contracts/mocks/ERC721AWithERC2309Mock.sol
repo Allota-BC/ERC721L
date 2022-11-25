@@ -1,19 +1,19 @@
 // SPDX-License-Identifier: MIT
-// ERC721A Contracts v4.2.3
+// ERC721L Contracts v4.2.3
 // Creators: Chiru Labs
 
 pragma solidity ^0.8.4;
 
-import '../ERC721A.sol';
+import '../ERC721L.sol';
 
-contract ERC721AWithERC2309Mock is ERC721A {
+contract ERC721AWithERC2309Mock is ERC721L {
     constructor(
         string memory name_,
         string memory symbol_,
         address to,
         uint256 quantity,
         bool mintInConstructor
-    ) ERC721A(name_, symbol_) {
+    ) ERC721L(name_, symbol_) {
         if (mintInConstructor) {
             _mintERC2309(to, quantity);
         }

@@ -1,4 +1,4 @@
-name: ERC721A CI
+name: ERC721L CI
 
 on:
   push:

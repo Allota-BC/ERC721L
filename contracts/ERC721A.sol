@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-// ERC721A Contracts v4.2.3
+// ERC721L Contracts v4.2.3
 // Creator: Chiru Labs
 
 pragma solidity ^0.8.4;
@@ -19,7 +19,7 @@ interface ERC721A__IERC721Receiver {
 }
 
 /**
- * @title ERC721A
+ * @title ERC721L
  *
  * @dev Implementation of the [ERC721](https://eips.ethereum.org/EIPS/eip-721)
  * Non-Fungible Token Standard, including the Metadata extension.
@@ -33,8 +33,8 @@ interface ERC721A__IERC721Receiver {
  * - An owner cannot have more than 2**64 - 1 (max value of uint64) of supply.
  * - The maximum token ID cannot exceed 2**256 - 1 (max value of uint256).
  */
-contract ERC721A is IERC721A {
-    // Bypass for a `--via-ir` bug (https://github.com/chiru-labs/ERC721A/pull/364).
+contract ERC721L is IERC721A {
+    // Bypass for a `--via-ir` bug (https://github.com/chiru-labs/ERC721L/pull/364).
     struct TokenApprovalRef {
         address value;
     }
@@ -415,7 +415,7 @@ contract ERC721A is IERC721A {
     // =============================================================
 
     /**
-     * @dev Gives permission to `to` to transfer `tokenId` token to another account. See {ERC721A-_approve}.
+     * @dev Gives permission to `to` to transfer `tokenId` token to another account. See {ERC721L-_approve}.
      *
      * Requirements:
      *

@@ -709,11 +709,11 @@ const createTestSuite = ({ contract, constructorArgs }) =>
     });
   };
 
-describe('ERC721L', createTestSuite({ contract: 'ERC721AMock', constructorArgs: ['Azuki', 'AZUKI'] }));
+describe('ERC721L', createTestSuite({ contract: 'ERC721AMock', constructorArgs: ['Lota', 'AZUKI'] }));
 
 describe(
   'ERC721L override _startTokenId()',
-  createTestSuite({ contract: 'ERC721AStartTokenIdMock', constructorArgs: ['Azuki', 'AZUKI', 1] })
+  createTestSuite({ contract: 'ERC721AStartTokenIdMock', constructorArgs: ['Lota', 'AZUKI', 1] })
 );
 
 describe('ERC721L with ERC2309', async function () {
@@ -723,9 +723,9 @@ describe('ERC721L with ERC2309', async function () {
     this.addr1 = addr1;
 
     let args;
-    args = ['Azuki', 'AZUKI', this.owner.address, 1, true];
+    args = ['Lota', 'AZUKI', this.owner.address, 1, true];
     this.erc721aMint1 = await deployContract('ERC721AWithERC2309Mock', args);
-    args = ['Azuki', 'AZUKI', this.owner.address, 10, true];
+    args = ['Lota', 'AZUKI', this.owner.address, 10, true];
     this.erc721aMint10 = await deployContract('ERC721AWithERC2309Mock', args);
   });
 
@@ -744,19 +744,19 @@ describe('ERC721L with ERC2309', async function () {
   it('requires quantity to be below mint limit', async function () {
     let args;
     const mintLimit = 5000;
-    args = ['Azuki', 'AZUKI', this.owner.address, mintLimit, true];
+    args = ['Lota', 'AZUKI', this.owner.address, mintLimit, true];
     await deployContract('ERC721AWithERC2309Mock', args);
-    args = ['Azuki', 'AZUKI', this.owner.address, mintLimit + 1, true];
+    args = ['Lota', 'AZUKI', this.owner.address, mintLimit + 1, true];
     await expect(deployContract('ERC721AWithERC2309Mock', args)).to.be.revertedWith('MintERC2309QuantityExceedsLimit');
   })
 
   it('rejects mints to the zero address', async function () {
-    let args = ['Azuki', 'AZUKI', ZERO_ADDRESS, 1, true];
+    let args = ['Lota', 'AZUKI', ZERO_ADDRESS, 1, true];
     await expect(deployContract('ERC721AWithERC2309Mock', args)).to.be.revertedWith('MintToZeroAddress');
   });
 
   it('requires quantity to be greater than 0', async function () {
-    let args = ['Azuki', 'AZUKI', this.owner.address, 0, true];
+    let args = ['Lota', 'AZUKI', this.owner.address, 0, true];
     await expect(deployContract('ERC721AWithERC2309Mock', args)).to.be.revertedWith('MintZeroQuantity');
   });
 });

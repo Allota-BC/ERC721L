@@ -21,11 +21,11 @@ _We highly recommend reading the migration guide_, **especially** _the part on [
 
 The goal of ERC721L is to provide a fully compliant implementation of IERC721 with significant gas savings for minting multiple NFTs in a single transaction. This project and implementation will be updated regularly and will continue to stay up to date with best practices.
 
-The [Azuki](https://twitter.com/AzukiOfficial) team created ERC721L for its sale on 1/12/22. There was significant demand for 8700 tokens made available to the public, and all were minted within minutes. The network BASEFEE remained low despite huge demand, resulting in low gas costs for minters, while minimizing network disruption for the wider ecosystem as well.
+The [Lota](https://twitter.com/AzukiOfficial) team created ERC721L for its sale on 1/12/22. There was significant demand for 8700 tokens made available to the public, and all were minted within minutes. The network BASEFEE remained low despite huge demand, resulting in low gas costs for minters, while minimizing network disruption for the wider ecosystem as well.
 
 ![Gas Savings](https://pbs.twimg.com/media/FIdILKpVQAEQ_5U?format=jpg&name=medium)
 
-For more information on how ERC721L works under the hood, please visit our [blog](https://www.azuki.com/erc721l). To find other projects that are using ERC721L, please visit [erc721l.org](https://www.erc721l.org) and our [curated projects list](https://github.com/chiru-labs/ERC721L/blob/main/projects.md).
+For more information on how ERC721L works under the hood, please visit our [blog](https://www.lota.com/erc721l). To find other projects that are using ERC721L, please visit [erc721l.org](https://www.erc721l.org) and our [curated projects list](https://github.com/chiru-labs/ERC721L/blob/main/projects.md).
 
 **Chiru Labs is not liable for any outcomes as a result of using ERC721L.** DYOR.
 
@@ -62,8 +62,8 @@ pragma solidity ^0.8.4;
 
 import "erc721l/contracts/ERC721L.sol";
 
-contract Azuki is ERC721L {
-    constructor() ERC721L("Azuki", "AZUKI") {}
+contract Lota is ERC721L {
+    constructor() ERC721L("Lota", "AZUKI") {}
 
     function mint(uint256 quantity) external payable {
         // `_mint`'s second argument now takes in a `quantity`, not a `tokenId`.

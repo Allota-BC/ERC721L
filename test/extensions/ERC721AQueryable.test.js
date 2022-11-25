@@ -295,7 +295,7 @@ describe(
   'ERC721AQueryable',
   createTestSuite({
     contract: 'ERC721AQueryableMock',
-    constructorArgs: ['Azuki', 'AZUKI'],
+    constructorArgs: ['Lota', 'AZUKI'],
   })
 );
 
@@ -303,6 +303,6 @@ describe(
   'ERC721AQueryable override _startTokenId()',
   createTestSuite({
     contract: 'ERC721AQueryableStartTokenIdMock',
-    constructorArgs: ['Azuki', 'AZUKI', 1],
+    constructorArgs: ['Lota', 'AZUKI', 1],
   })
 );

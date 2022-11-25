@@ -150,6 +150,6 @@ describe(
   'ERC4907A',
   createTestSuite({
     contract: 'ERC4907AMock',
-    constructorArgs: ['Azuki', 'AZUKI'],
+    constructorArgs: ['Lota', 'AZUKI'],
   })
 );

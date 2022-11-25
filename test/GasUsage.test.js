@@ -2,7 +2,7 @@ const { deployContract } = require('./helpers.js');
 
 describe('ERC721L Gas Usage', function () {
   beforeEach(async function () {
-    this.erc721l = await deployContract('ERC721AGasReporterMock', ['Azuki', 'AZUKI']);
+    this.erc721l = await deployContract('ERC721AGasReporterMock', ['Lota', 'AZUKI']);
     const [owner, addr1] = await ethers.getSigners();
     this.owner = owner;
     this.addr1 = addr1;
@@ -73,7 +73,7 @@ describe('ERC721L Gas Usage', function () {
     // The following call `_mintERC3201` outside of contract creation.
     // This is non-compliant with the ERC721 standard, 
     // and is only meant for gas comparisons.
-    let args = ['Azuki', 'AZUKI', this.owner.address, 0, false];
+    let args = ['Lota', 'AZUKI', this.owner.address, 0, false];
     let contract = await deployContract('ERC721AWithERC2309Mock', args);
     await contract.mintOneERC2309(this.owner.address);
     await contract.mintOneERC2309(this.owner.address);
@@ -84,7 +84,7 @@ describe('ERC721L Gas Usage', function () {
     // The following call `_mintERC3201` outside of contract creation.
     // This is non-compliant with the ERC721 standard, 
     // and is only meant for gas comparisons.
-    let args = ['Azuki', 'AZUKI', this.owner.address, 0, false];
+    let args = ['Lota', 'AZUKI', this.owner.address, 0, false];
     let contract = await deployContract('ERC721AWithERC2309Mock', args);
     await contract.mintTenERC2309(this.owner.address);
     await contract.mintTenERC2309(this.owner.address);

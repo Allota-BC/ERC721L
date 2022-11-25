@@ -103,6 +103,6 @@ describe(
   'ERC721L override _extraData()',
   createTestSuite({
     contract: 'ERC721ATransferCounterMock',
-    constructorArgs: ['Azuki', 'AZUKI'],
+    constructorArgs: ['Lota', 'AZUKI'],
   })
 );

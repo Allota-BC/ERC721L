@@ -201,9 +201,9 @@ const createTestSuite = ({ contract, constructorArgs }) =>
     });
   };
 
-describe('ERC721ABurnable', createTestSuite({ contract: 'ERC721ABurnableMock', constructorArgs: ['Azuki', 'AZUKI'] }));
+describe('ERC721ABurnable', createTestSuite({ contract: 'ERC721ABurnableMock', constructorArgs: ['Lota', 'AZUKI'] }));
 
 describe(
   'ERC721ABurnable override _startTokenId()',
-  createTestSuite({ contract: 'ERC721ABurnableStartTokenIdMock', constructorArgs: ['Azuki', 'AZUKI', 1] })
+  createTestSuite({ contract: 'ERC721ABurnableStartTokenIdMock', constructorArgs: ['Lota', 'AZUKI', 1] })
 );

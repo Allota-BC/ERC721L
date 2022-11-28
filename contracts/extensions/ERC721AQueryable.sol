@@ -4,7 +4,7 @@
 
 pragma solidity ^0.8.4;
 
-import './IERC721AQueryable.sol';
+import './IERC721LQueryable.sol';
 import '../ERC721L.sol';
 
 /**
@@ -12,7 +12,7 @@ import '../ERC721L.sol';
  *
  * @dev ERC721L subclass with convenience query functions.
  */
-abstract contract ERC721AQueryable is ERC721L, IERC721AQueryable {
+abstract contract ERC721AQueryable is ERC721L, IERC721LQueryable {
     /**
      * @dev Returns the `TokenOwnership` struct at `tokenId` without reverting.
      *

@@ -7,7 +7,7 @@ pragma solidity ^0.8.4;
 /**
  * @dev Interface of ERC721L.
  */
-interface IERC721A {
+interface IERC721L {
     /**
      * The caller must own the token or be an approved operator.
      */

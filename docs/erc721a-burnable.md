@@ -7,7 +7,7 @@ ERC721L Token that can be irreversibly burned (destroyed).
 Inherits:
 
 - [ERC721L](erc721l.md)
-- [IERC721ABurnable](interfaces.md#ierc721aburnable) 
+- [IERC721LBurnable](interfaces.md#IERC721Lburnable) 
 
 ## Functions
 

@@ -10,7 +10,7 @@ An owner cannot have more than `2**64 - 1` (max value of `uint64`) tokens.
 
 Inherits:
 
-- [IERC721A](interfaces.md#ierc721a) 
+- [IERC721L](interfaces.md#IERC721L) 
 
 ## Structs
 

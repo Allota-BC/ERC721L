@@ -4,12 +4,12 @@
 
 pragma solidity ^0.8.4;
 
-import '../IERC721A.sol';
+import '../IERC721L.sol';
 
 /**
  * @dev Interface of ERC4907A.
  */
-interface IERC4907A is IERC721A {
+interface IERC4907A is IERC721L {
     /**
      * The caller must own the token or be an approved operator.
      */

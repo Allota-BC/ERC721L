@@ -6,7 +6,7 @@ pragma solidity ^0.8.4;
 
 import '../ERC721L.sol';
 
-interface IERC721AMock {
+interface IERC721LMock {
     function safeMint(address to, uint256 quantity) external;
 }
 
@@ -48,7 +48,7 @@ contract ERC721ReceiverMock is ERC721A__IERC721Receiver {
 
         // For testing the reentrancy protection.
         if (dataValue == 0x03) {
-            IERC721AMock(_erc721aMock).safeMint(address(this), 1);
+            IERC721LMock(_erc721aMock).safeMint(address(this), 1);
         }
 
         emit Received(operator, from, tokenId, data, 20000);

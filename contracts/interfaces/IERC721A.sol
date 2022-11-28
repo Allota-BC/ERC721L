@@ -4,4 +4,4 @@
 
 pragma solidity ^0.8.4;
 
-import '../IERC721A.sol';
+import '../IERC721L.sol';

@@ -78,7 +78,7 @@ abstract contract ERC4907A is ERC721L, IERC4907A {
     /**
      * @dev Override of {IERC165-supportsInterface}.
      */
-    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721L, IERC721A) returns (bool) {
+    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721L, IERC721L) returns (bool) {
         // The interface ID for ERC4907 is `0xad092b5c`,
         // as defined in [ERC4907](https://eips.ethereum.org/EIPS/eip-4907).
         return super.supportsInterface(interfaceId) || interfaceId == 0xad092b5c;

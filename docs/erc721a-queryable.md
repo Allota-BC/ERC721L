@@ -7,7 +7,7 @@ ERC721L subclass with convenience query functions.
 Inherits:
 
 - [ERC721L](erc721l.md)
-- [IERC721AQueryable](interfaces.md#ierc721aqueryable) 
+- [IERC721LQueryable](interfaces.md#IERC721Lqueryable) 
 
 ## Functions
 

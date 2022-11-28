@@ -8,11 +8,11 @@ import './IERC721LBurnable.sol';
 import '../ERC721L.sol';
 
 /**
- * @title ERC721ABurnable.
+ * @title ERC721LBurnable.
  *
  * @dev ERC721L token that can be irreversibly burned (destroyed).
  */
-abstract contract ERC721ABurnable is ERC721L, IERC721LBurnable {
+abstract contract ERC721LBurnable is ERC721L, IERC721LBurnable {
     /**
      * @dev Burns `tokenId`. See {ERC721L-_burn}.
      *

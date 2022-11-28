@@ -4,10 +4,10 @@
 
 pragma solidity ^0.8.4;
 
-import './ERC721AMock.sol';
+import './ERC721LMock.sol';
 
-contract ERC721ATransferCounterMock is ERC721AMock {
-    constructor(string memory name_, string memory symbol_) ERC721AMock(name_, symbol_) {}
+contract ERC721LTransferCounterMock is ERC721LMock {
+    constructor(string memory name_, string memory symbol_) ERC721LMock(name_, symbol_) {}
 
     function _extraData(
         address from,

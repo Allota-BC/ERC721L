@@ -4,15 +4,15 @@
 
 pragma solidity ^0.8.4;
 
-import './ERC721ABurnableMock.sol';
+import './ERC721LMock.sol';
 import './StartTokenIdHelper.sol';
 
-contract ERC721ABurnableStartTokenIdMock is StartTokenIdHelper, ERC721ABurnableMock {
+contract ERC721LStartTokenIdMock is StartTokenIdHelper, ERC721LMock {
     constructor(
         string memory name_,
         string memory symbol_,
         uint256 startTokenId_
-    ) StartTokenIdHelper(startTokenId_) ERC721ABurnableMock(name_, symbol_) {}
+    ) StartTokenIdHelper(startTokenId_) ERC721LMock(name_, symbol_) {}
 
     function _startTokenId() internal view override returns (uint256) {
         return startTokenId;

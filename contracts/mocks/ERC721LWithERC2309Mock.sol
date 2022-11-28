@@ -6,7 +6,7 @@ pragma solidity ^0.8.4;
 
 import '../ERC721L.sol';
 
-contract ERC721AWithERC2309Mock is ERC721L {
+contract ERC721LWithERC2309Mock is ERC721L {
     constructor(
         string memory name_,
         string memory symbol_,

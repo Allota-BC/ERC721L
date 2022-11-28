@@ -4,9 +4,9 @@
 
 pragma solidity ^0.8.4;
 
-import '../extensions/ERC721ABurnable.sol';
+import '../extensions/ERC721LBurnable.sol';
 
-contract ERC721ABurnableMock is ERC721L, ERC721ABurnable {
+contract ERC721LBurnableMock is ERC721L, ERC721LBurnable {
     constructor(string memory name_, string memory symbol_) ERC721L(name_, symbol_) {}
 
     function exists(uint256 tokenId) public view returns (bool) {

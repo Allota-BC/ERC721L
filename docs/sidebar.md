@@ -5,9 +5,9 @@
 - [Migration to 4.x](migration.md)
 - API
   - [ERC721L](erc721l.md)
-  - [ERC721ABurnable](erc721l-burnable.md)
-  - [ERC721AQueryable](erc721l-queryable.md)
-  - [ERC4907A](erc4907a.md)
+  - [ERC721LBurnable](erc721l-burnable.md)
+  - [ERC721LQueryable](erc721l-queryable.md)
+  - [ERC4907L](erc4907a.md)
   - [Interfaces](interfaces.md)
 - **Theme**
 <div id="theme">

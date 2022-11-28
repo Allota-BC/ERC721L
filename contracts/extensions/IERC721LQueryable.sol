@@ -7,7 +7,7 @@ pragma solidity ^0.8.4;
 import '../IERC721L.sol';
 
 /**
- * @dev Interface of ERC721AQueryable.
+ * @dev Interface of ERC721LQueryable.
  */
 interface IERC721LQueryable is IERC721L {
     /**
@@ -43,7 +43,7 @@ interface IERC721LQueryable is IERC721L {
 
     /**
      * @dev Returns an array of `TokenOwnership` structs at `tokenIds` in order.
-     * See {ERC721AQueryable-explicitOwnershipOf}
+     * See {ERC721LQueryable-explicitOwnershipOf}
      */
     function explicitOwnershipsOf(uint256[] memory tokenIds) external view returns (TokenOwnership[] memory);
 
@@ -53,7 +53,7 @@ interface IERC721LQueryable is IERC721L {
      * (i.e. `start <= tokenId < stop`).
      *
      * This function allows for tokens to be queried if the collection
-     * grows too big for a single call of {ERC721AQueryable-tokensOfOwner}.
+     * grows too big for a single call of {ERC721LQueryable-tokensOfOwner}.
      *
      * Requirements:
      *
@@ -71,7 +71,7 @@ interface IERC721LQueryable is IERC721L {
      * This function scans the ownership mapping and is O(`totalSupply`) in complexity.
      * It is meant to be called off-chain.
      *
-     * See {ERC721AQueryable-tokensOfOwnerIn} for splitting the scan into
+     * See {ERC721LQueryable-tokensOfOwnerIn} for splitting the scan into
      * multiple smaller scans if the collection is large enough to cause
      * an out-of-gas error (10K collections should be fine).
      */

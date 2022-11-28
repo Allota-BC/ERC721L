@@ -4,17 +4,17 @@
 
 pragma solidity ^0.8.4;
 
-import './IERC4907A.sol';
+import './IERC4907L.sol';
 import '../ERC721L.sol';
 
 /**
- * @title ERC4907A
+ * @title ERC4907L
  *
  * @dev [ERC4907](https://eips.ethereum.org/EIPS/eip-4907) compliant
  * extension of ERC721L, which allows owners and authorized addresses
  * to add a time-limited role with restricted permissions to ERC721 tokens.
  */
-abstract contract ERC4907A is ERC721L, IERC4907A {
+abstract contract ERC4907L is ERC721L, IERC4907L {
     // The bit position of `expires` in packed user info.
     uint256 private constant _BITPOS_EXPIRES = 160;
 
@@ -40,9 +40,9 @@ abstract contract ERC4907A is ERC721L, IERC4907A {
     ) public virtual override {
         // Require the caller to be either the token owner or an approved operator.
         address owner = ownerOf(tokenId);
-        if (_msgSenderERC721A() != owner)
-            if (!isApprovedForAll(owner, _msgSenderERC721A()))
-                if (getApproved(tokenId) != _msgSenderERC721A()) revert SetUserCallerNotOwnerNorApproved();
+        if (_msgSenderERC721L() != owner)
+            if (!isApprovedForAll(owner, _msgSenderERC721L()))
+                if (getApproved(tokenId) != _msgSenderERC721L()) revert SetUserCallerNotOwnerNorApproved();
 
         _packedUserInfo[tokenId] = (uint256(expires) << _BITPOS_EXPIRES) | uint256(uint160(user));
 

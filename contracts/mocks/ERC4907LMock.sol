@@ -4,16 +4,16 @@
 
 pragma solidity ^0.8.4;
 
-import '../extensions/ERC4907A.sol';
+import '../extensions/ERC4907L.sol';
 
-contract ERC4907AMock is ERC721L, ERC4907A {
+contract ERC4907LMock is ERC721L, ERC4907L {
     constructor(string memory name_, string memory symbol_) ERC721L(name_, symbol_) {}
 
     function mint(address to, uint256 quantity) public {
         _mint(to, quantity);
     }
 
-    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721L, ERC4907A) returns (bool) {
+    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721L, ERC4907L) returns (bool) {
         return super.supportsInterface(interfaceId);
     }
 

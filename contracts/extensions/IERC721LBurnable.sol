@@ -7,7 +7,7 @@ pragma solidity ^0.8.4;
 import '../IERC721L.sol';
 
 /**
- * @dev Interface of ERC721ABurnable.
+ * @dev Interface of ERC721LBurnable.
  */
 interface IERC721LBurnable is IERC721L {
     /**

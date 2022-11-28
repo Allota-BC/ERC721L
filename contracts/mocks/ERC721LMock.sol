@@ -6,7 +6,7 @@ pragma solidity ^0.8.4;
 
 import '../ERC721L.sol';
 
-contract ERC721AMock is ERC721L {
+contract ERC721LMock is ERC721L {
     constructor(string memory name_, string memory symbol_) ERC721L(name_, symbol_) {}
 
     function numberMinted(address owner) public view returns (uint256) {

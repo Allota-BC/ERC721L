@@ -44,15 +44,15 @@ import 'erc721l/contracts/interfaces/IERC721LQueryable.sol';
 
 ```
 
-### IERC4907A
+### IERC4907L
 
-[`erc721l/contracts/extensions/IERC4907A.sol`](https://github.com/chiru-labs/ERC721L/blob/main/contracts/extensions/IERC4907A.sol)
+[`erc721l/contracts/extensions/IERC4907L.sol`](https://github.com/chiru-labs/ERC721L/blob/main/contracts/extensions/IERC4907L.sol)
 
 Inherits:
 
 - [IERC721L](#IERC721L)
 
 ```solidity
-import 'erc721l/contracts/interfaces/IERC4907A.sol';
+import 'erc721l/contracts/interfaces/IERC4907L.sol';
 
 ```

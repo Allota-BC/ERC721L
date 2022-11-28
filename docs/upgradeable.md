@@ -26,15 +26,15 @@ These functions are internal, and you must define your own public initializer fu
 ```solidity
 pragma solidity ^0.8.4;
 
-import 'erc721l-upgradeable/contracts/ERC721AUpgradeable.sol';
+import 'erc721l-upgradeable/contracts/ERC721LUpgradeable.sol';
 import '@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol';
 
-contract Something is ERC721AUpgradeable, OwnableUpgradeable {
+contract Something is ERC721LUpgradeable, OwnableUpgradeable {
     // Take note of the initializer modifiers.
-    // - `initializerERC721A` for `ERC721AUpgradeable`.
+    // - `initializerERC721L` for `ERC721LUpgradeable`.
     // - `initializer` for OpenZeppelin's `OwnableUpgradeable`.
-    function initialize() initializerERC721A initializer public {
-        __ERC721A_init('Something', 'SMTH');
+    function initialize() initializerERC721L initializer public {
+        __ERC721L_init('Something', 'SMTH');
         __Ownable_init();
     }
 
@@ -49,7 +49,7 @@ contract Something is ERC721AUpgradeable, OwnableUpgradeable {
 }
 ```
 
-If using with another upgradeable library, please do use their respective initializer modifier on the `initialize()` function, in addition to the `initializerERC721A` modifier.
+If using with another upgradeable library, please do use their respective initializer modifier on the `initialize()` function, in addition to the `initializerERC721L` modifier.
 
 ## Deployment
 

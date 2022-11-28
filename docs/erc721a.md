@@ -528,10 +528,10 @@ Converts a `uint256` to its ASCII `string` decimal representation.
 This function is provided as a drop-in replacement for OpenZeppelin's `Strings.toString(uint256 value)`.
 
 
-### \_msgSenderERC721A
+### \_msgSenderERC721L
 
 ```solidity
-function _msgSenderERC721A() internal view virtual returns (address) 
+function _msgSenderERC721L() internal view virtual returns (address) 
 ```
 
 Returns the message sender (defaults to `msg.sender`). 

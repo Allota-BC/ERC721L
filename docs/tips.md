@@ -57,7 +57,7 @@ You can use them to design tokenomics with very minimal gas overhead.
 >
 > You can get it from the 
 > [`_ownershipOf`](erc721l.md#_ownershipOf) function or the non-reverting 
-> [`ERC721AQueryable.explicitOwnershipOf`](erc721l-queryable.md#explicitOwnershipOf) function.
+> [`ERC721LQueryable.explicitOwnershipOf`](erc721l-queryable.md#explicitOwnershipOf) function.
 
 ## ERC721L vs ERC1155
 

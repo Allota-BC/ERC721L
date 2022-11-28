@@ -1,6 +1,6 @@
-# ERC721ABurnable
+# ERC721LBurnable
 
-[`erc721l/contracts/extensions/ERC721ABurnable.sol`](https://github.com/chiru-labs/ERC721L/blob/main/contracts/extensions/ERC721ABurnable.sol)
+[`erc721l/contracts/extensions/ERC721LBurnable.sol`](https://github.com/chiru-labs/ERC721L/blob/main/contracts/extensions/ERC721LBurnable.sol)
 
 ERC721L Token that can be irreversibly burned (destroyed).
 

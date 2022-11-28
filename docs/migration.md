@@ -14,7 +14,7 @@ The `_currentIndex` variable has been made private.
 
 Please use [`_nextTokenId`](erc721l.md#_nextTokenId) instead.
 
-If you need a `tokensOfOwner` function, please use [`ERC721AQueryable.tokensOfOwner`](erc721l-queryable.md#tokensOfOwner).
+If you need a `tokensOfOwner` function, please use [`ERC721LQueryable.tokensOfOwner`](erc721l-queryable.md#tokensOfOwner).
 
 ### \_burnCounter
 
@@ -28,15 +28,15 @@ The `_ownerships` mapping has been made private.
 
 Please use the following instead:
 - [`_ownershipOf`](erc721l.md#_ownershipOf)
-- [`ERC721AQueryable.explicitOwnershipOf`](erc721l-queryable.md#explicitOwnershipOf) (non-reverting)
-- [`ERC721AQueryable.tokensOfOwner`](erc721l-queryable.md#tokensOfOwner)
+- [`ERC721LQueryable.explicitOwnershipOf`](erc721l-queryable.md#explicitOwnershipOf) (non-reverting)
+- [`ERC721LQueryable.tokensOfOwner`](erc721l-queryable.md#tokensOfOwner)
 - [`_ownershipAt`](erc721l.md#_ownershipAt)
 
 ### \_msgSender
 
 The dependency on OpenZeppelin `_msgSender` has been removed.
 
-Please use [`_msgSenderERC721A`](erc721l.md#_msgSenderERC721A) instead.
+Please use [`_msgSenderERC721L`](erc721l.md#_msgSenderERC721L) instead.
 
 ### Strings.toString
 
@@ -65,9 +65,9 @@ function supportsInterface(
 }
 ```
 
-### ERC721AOwnersExplicit
+### ERC721LOwnersExplicit
 
-The `ERC721AOwnersExplicit` extension has been removed. 
+The `ERC721LOwnersExplicit` extension has been removed. 
 
 Please use [`_initializeOwnershipAt`](erc721l.md#_initializeOwnershipAt) instead.
 

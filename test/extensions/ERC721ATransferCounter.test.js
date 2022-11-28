@@ -5,7 +5,7 @@ const createTestSuite = ({ contract, constructorArgs }) =>
   function () {
     context(`${contract}`, function () {
       beforeEach(async function () {
-        this.erc721aCounter = await deployContract(contract, constructorArgs);
+        this.erc721lCounter = await deployContract(contract, constructorArgs);
       });
 
       context('with minted tokens', async function () {
@@ -29,10 +29,10 @@ const createTestSuite = ({ contract, constructorArgs }) =>
           for (const minter of this.mintOrder) {
             const balance = minter.expected.balance;
             if (balance > 0) {
-              await this.erc721aCounter['safeMint(address,uint256)'](minter.address, balance);
+              await this.erc721lCounter['safeMint(address,uint256)'](minter.address, balance);
             }
             // sanity check
-            expect(await this.erc721aCounter.balanceOf(minter.address)).to.equal(minter.expected.balance);
+            expect(await this.erc721lCounter.balanceOf(minter.address)).to.equal(minter.expected.balance);
           }
         });
 
@@ -40,14 +40,14 @@ const createTestSuite = ({ contract, constructorArgs }) =>
           it('initial', async function () {
             for (const minter of this.mintOrder) {
               for (const tokenId in minter.expected.tokens) {
-                const ownership = await this.erc721aCounter.getOwnershipOf(tokenId);
+                const ownership = await this.erc721lCounter.getOwnershipOf(tokenId);
                 expect(ownership.extraData).to.equal(42);
               }
             }
           });
 
           it('after a transfer', async function () {
-            await this.erc721aCounter.transferFrom(this.owner.address, this.addr1.address, 1);
+            await this.erc721lCounter.transferFrom(this.owner.address, this.addr1.address, 1);
 
             const tests = [
               { tokenId: 0, expectedData: 42 },
@@ -56,13 +56,13 @@ const createTestSuite = ({ contract, constructorArgs }) =>
             ];
 
             for (const test of tests) {
-              const ownership = await this.erc721aCounter.getOwnershipOf(test.tokenId);
+              const ownership = await this.erc721lCounter.getOwnershipOf(test.tokenId);
               expect(ownership.extraData).to.equal(test.expectedData);
             }
           });
 
           it('after a burn', async function () {
-            await this.erc721aCounter['burn(uint256)'](2);
+            await this.erc721lCounter['burn(uint256)'](2);
 
             const tests = [
               { tokenId: 0, expectedData: 42 },
@@ -71,7 +71,7 @@ const createTestSuite = ({ contract, constructorArgs }) =>
             ];
 
             for (const test of tests) {
-              const ownership = await this.erc721aCounter.getOwnershipAt(test.tokenId);
+              const ownership = await this.erc721lCounter.getOwnershipAt(test.tokenId);
               expect(ownership.extraData).to.equal(test.expectedData);
             }
           });
@@ -80,18 +80,18 @@ const createTestSuite = ({ contract, constructorArgs }) =>
         describe('setExtraData', function () {
           it('can set and get the extraData directly', async function () {
             const extraData = 12345;
-            await this.erc721aCounter.setExtraDataAt(0, extraData);
-            const ownership = await this.erc721aCounter.getOwnershipAt(0);
+            await this.erc721lCounter.setExtraDataAt(0, extraData);
+            const ownership = await this.erc721lCounter.getOwnershipAt(0);
             expect(ownership.extraData).to.equal(extraData);
           });
 
           it('setting the extraData for uninitialized slot reverts', async function () {
             const extraData = 12345;
-            await expect(this.erc721aCounter.setExtraDataAt(2, extraData))
+            await expect(this.erc721lCounter.setExtraDataAt(2, extraData))
               .to.be.revertedWith('OwnershipNotInitializedForExtraData');
-            await this.erc721aCounter.transferFrom(this.owner.address, this.addr1.address, 2);
-            await this.erc721aCounter.setExtraDataAt(2, extraData);
-            const ownership = await this.erc721aCounter.getOwnershipAt(2);
+            await this.erc721lCounter.transferFrom(this.owner.address, this.addr1.address, 2);
+            await this.erc721lCounter.setExtraDataAt(2, extraData);
+            const ownership = await this.erc721lCounter.getOwnershipAt(2);
             expect(ownership.extraData).to.equal(extraData);
           });
         });
@@ -102,7 +102,7 @@ const createTestSuite = ({ contract, constructorArgs }) =>
 describe(
   'ERC721L override _extraData()',
   createTestSuite({
-    contract: 'ERC721ATransferCounterMock',
+    contract: 'ERC721LTransferCounterMock',
     constructorArgs: ['Lota', 'AZUKI'],
   })
 );

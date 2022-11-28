@@ -147,9 +147,9 @@ const createTestSuite = ({ contract, constructorArgs }) =>
   };
 
 describe(
-  'ERC4907A',
+  'ERC4907L',
   createTestSuite({
-    contract: 'ERC4907AMock',
+    contract: 'ERC4907LMock',
     constructorArgs: ['Lota', 'AZUKI'],
   })
 );

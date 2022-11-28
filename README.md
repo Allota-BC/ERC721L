@@ -63,7 +63,7 @@ pragma solidity ^0.8.4;
 import "erc721l/contracts/ERC721L.sol";
 
 contract Lota is ERC721L {
-    constructor() ERC721L("Lota", "AZUKI") {}
+    constructor() ERC721L("Lota", "LOTA") {}
 
     function mint(uint256 quantity) external payable {
         // `_mint`'s second argument now takes in a `quantity`, not a `tokenId`.
